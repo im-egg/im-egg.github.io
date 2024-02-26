@@ -1,1 +1,127 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="IE=edge" >
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+<title>全网免费吃瓜平台</title>
+<link rel="stylesheet" href="https://g.alicdn.com/apsara-media-box/imp-web-player/2.20.2/skins/default/aliplayer-min.css" />
+<script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/apsara-media-box/imp-web-player/2.20.2/aliplayer-min.js"></script>
+</head>
+<body>
+<div class="prism-player" id="player-con"></div>
+<script>
+const url_string = window.location.href;
+const url = new URL(url_string);
+let mediasrc = "http://mylcyz.top/" + url.searchParams.get("t");
+var player = new Aliplayer({
+  "id": "player-con",
+  "source": mediasrc,
+  "width": "100%",
+  "height": "500px",
+  "autoplay": true,
+  "isLive": false,
+  "rePlay": false,
+  "playsinline": true,
+  "preload": true,
+  "controlBarVisibility": "hover",
+  "useH5Prism": true,
+  "skinLayout": [
+    {
+      "name": "bigPlayButton",
+      "align": "blabs",
+      "x": 30,
+      "y": 80
+    },
+    {
+      "name": "H5Loading",
+      "align": "cc"
+    },
+    {
+      "name": "errorDisplay",
+      "align": "tlabs",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "name": "infoDisplay"
+    },
+    {
+      "name": "tooltip",
+      "align": "blabs",
+      "x": 0,
+      "y": 56
+    },
+    {
+      "name": "thumbnail"
+    },
+    {
+      "name": "controlBar",
+      "align": "blabs",
+      "x": 0,
+      "y": 0,
+      "children": [
+        {
+          "name": "progress",
+          "align": "blabs",
+          "x": 0,
+          "y": 44
+        },
+        {
+          "name": "playButton",
+          "align": "tl",
+          "x": 15,
+          "y": 12
+        },
+        {
+          "name": "timeDisplay",
+          "align": "tl",
+          "x": 10,
+          "y": 7
+        },
+        {
+          "name": "fullScreenButton",
+          "align": "tr",
+          "x": 10,
+          "y": 12
+        },
+        {
+          "name": "setting",
+          "align": "tr",
+          "x": 15,
+          "y": 12
+        },
+        {
+          "name": "volume",
+          "align": "tr",
+          "x": 5,
+          "y": 10
+        }
+      ]
+    }
+  ]
+}, function (player) {
+    console.log("The player is created");
+    player.play();
+  }
+);
+</script>
+<style>
+.button-3d-1{
+  position: relative;
+  background: orangered;
+  border: none;
+  color: white;
+  padding: 15px 40px;
+  font-size: 1.4rem;
+  outline: none;
+  box-shadow: -6px 6px 0 hsl(16, 100%, 30%);
+}
+</style>
+<div style="text-align:center">
+<a href="http://mylcyz.top/joingroup.html">
+<button class="button-3d-1">获取更多精彩资源</button>
+</a>
+</div>
+</body>
+</html>
