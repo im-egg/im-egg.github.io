@@ -13,7 +13,7 @@
 <script>
 const paramsStr = window.location.search;
 const params = new URLSearchParams(paramsStr);
-let enc = atob(params.get('url'));
+let enc = atob(params.get('justlink'));
 var player = new Aliplayer({
   "id": "player-con",
   "source": enc,
