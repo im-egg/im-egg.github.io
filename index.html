@@ -1,69 +1,70 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="IE=edge" >
-<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
-<title>全网免费吃瓜平台</title>
-<link rel="stylesheet" href="https://g.alicdn.com/apsara-media-box/imp-web-player/2.20.2/skins/default/aliplayer-min.css" />
-<script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/apsara-media-box/imp-web-player/2.20.2/aliplayer-min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <title>H5引导页</title>
 </head>
-<body>
-<div class="prism-player" id="player-con"></div>
-<script>
-const paramsStr = window.location.search;
-const params = new URLSearchParams(paramsStr);
-let enc = params.get('url');
-var player = new Aliplayer({
-  "id": "player-con",
-  "source": enc,
-  "width": "100%",
-  "height": "500px",
-  "autoplay": true,
-  "isLive": false,
-  "rePlay": false,
-  "playsinline": true,
-  "preload": true,
-  "controlBarVisibility": "hover",
-  "useH5Prism": true
-}, function (player) {
-    console.log("The player is created");
-  }
-);
-</script>
 <style>
-.button-3d-1{
-  position: relative;
-  background: orangered;
-  border: none;
-  color: white;
-  padding: 15px 40px;
-  font-size: 1.4rem;
-  outline: none;
-  box-shadow: -6px 6px 0 hsl(16, 100%, 30%);
-}
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    body {
+        width: 100%;
+        height: 100%;
+        background: #FFFFFF;
+    }
+    
+    .bg {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.9);
+        text-align: end;
+        overflow: hidden;
+        padding: 1rem 5px 0 1rem;
+    }
+    
+    .bg img {
+        width: 93%;
+        height: auto;
+    }
 </style>
-<div style="text-align:center">
-<a href="http://mylcyz.top/joingroup.html">
-<button class="button-3d-1">获取更多精彩资源</button>
-</a>
-</div>
-<link href="http://cdn.staticfile.org/layui/2.9.6/css/layui.css" rel="stylesheet">
-<script src="http://cdn.staticfile.org/layui/2.9.6/layui.js"></script>
-<script>
-  // Usage
-  layui.use(function(){
-    var layer = layui.layer;
-    // Welcome
-    layer.alert('加入吃瓜裙，吃瓜不迷路！', {
-        skin: 'layui-layer-win10', // 2.8+
-        shade: 0.01,
-        btn: ['好', '再看看'],
-        btn1: function(index, layero, that){window.location.href="http://mylcyz.top/joingroup.html"},
-        btn2: function(index, layero, that){}
-      });
-  });
-</script>
+
+<body>
+    <div class="app">
+        <div class="bg"><img src="https://i-blog.csdnimg.cn/blog_migrate/6e5cef3f1c57859374a76ee1815c41d2.png" alt=""></div>
+        <h2>页面跳转中……</h2>
+    </div>
+    <script>
+        window.onload = function() {
+	        var fontSize = $(window).width() / 18.75; //屏幕的宽
+	        $("html").css("font-size", fontSize + "px");
+	        if (IsWeixinOrAlipay() == 13) {
+	                $(".bg").css('display', 'block')
+	            } else {
+	                console.log(IsWeixinOrAlipay())
+	                window.location.href='https://drive.uc.cn/s/dc97aaa80b904'
+	            }
+        }
+
+        function IsWeixinOrAlipay() {
+            var ua = window.navigator.userAgent; 
+	var n=ua.match(/CoolMarket/g);
+	if(n == 'CoolMarket'){
+                return 13;
+            }
+            return 0;
+        }
+    </script>
 </body>
+
 </html>
